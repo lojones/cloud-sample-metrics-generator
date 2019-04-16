@@ -10,8 +10,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.Assert.*;
-
 @RunWith(SpringRunner.class)
 public class XlsWriterTest {
 
@@ -38,6 +36,6 @@ public class XlsWriterTest {
     public void write() throws IOException {
         List<List<String>> rows = new ArrayList<List<String>>();
         List<String> row = Arrays.asList("/ORG/SPACE/APP/0","490");
-        XlsWriter.write("test.xlsx",Arrays.asList(worksheetData));
+        XlsWriter.writeToFile("test.xlsx",Arrays.asList(worksheetData));
     }
 }

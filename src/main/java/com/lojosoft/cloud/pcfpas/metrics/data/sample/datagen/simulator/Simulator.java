@@ -18,7 +18,7 @@ public class Simulator {
         Foundation foundation = new Foundation("GTA",orgs,"/",null);
 
         List<String> orgNames = new ArrayList<>();
-        for (int i=0;i<100;i++){
+        for (int i=0;i<50;i++){
             String orgName=NameSimulator.getOrgName();
             if (!orgNames.contains(orgName)) {
                 orgs.add(simulateOrg(orgName, foundation));
@@ -33,7 +33,7 @@ public class Simulator {
 
         List<Space> spaces = new ArrayList<>();
 
-        Org org = new Org(orgName,spaces,parent.getPath()+"/"+orgName,parent);
+        Org org = new Org(orgName,spaces,"/"+orgName,parent);
 
         Integer a = random.nextInt(4);
 
@@ -61,7 +61,7 @@ public class Simulator {
 
         List<App> apps = new ArrayList<>();
         Space space = new Space(spaceName,apps,parent.getPath()+"/"+spaceName,parent);
-        int numApps = random.nextInt(50)+1;
+        int numApps = random.nextInt(20)+1;
 
         for (int i=0;i<numApps;i++) {
             apps.add(simulateApp(space.getPath(),space));
